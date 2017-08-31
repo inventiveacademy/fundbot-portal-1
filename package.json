@@ -1,0 +1,27 @@
+{
+  "name": "fundbot-portal-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inventivegroup/fundbot-portal-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inventivegroup/fundbot-portal-1/issues"
+  },
+  "homepage": "https://github.com/inventivegroup/fundbot-portal-1#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-rc.3"
+  }
+}
