@@ -10,10 +10,14 @@ let app = express();
 
 /*
 Parse incoming requests
+
 */
 //parse incoming requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false }));
+
+// serve static files from /public
+app.use(express.static(__dirname + '/public'));
 
 /*
 View engine setup!
@@ -28,15 +32,17 @@ let routes = require('./routes/index');
 app.use('/', routes);
 
 /*
-404 rror handler
+404 error handler
 */
 app.use(function(req,res,next){
+	
 	let err = new Error('File not found, oh noes man!');
 	err.status = 404;
 	next(err);
 });
+
 /*
-The last of the app.use callbacks! Our stop all error handler
+The last of the app.use callbacks! Our stop-all error handler
 */
 app.use(function(err, req, res, next){
 	res.status(err.status || 500);
