@@ -6,7 +6,7 @@ block content
       h1.display-4.m-b-2 Sign Up
       
       // register form
-      form(method='POST' action='http://localhost:3001/')
+      form#superForm(method='POST' action='http://localhost:3001/')
         div.form-group
           label(for='firstName') First Name:
           input#firstName.form-control(type='text', placeholder='First name here!' name='firstName')
@@ -23,13 +23,13 @@ block content
           label(for='email') Email:
           input#email.form-control(type='email', placeholder='name@email.com' name='email')
         div.form-group
-          label(for='cohort') Address (number and street)
+          label(for='address') Address (number and street)
           input#address.form-control(type='text', placeholder='Your Address' name='address')
         div.form-group
-          label(for='cohort') Your Cohort:
+          label(for='zip') Zip Code:
           input#zip.form-control(type='text', placeholder='Zip Code' name='zip')
         div.form-group
-          label(for='cohort') City
+          label(for='city') City
           input#city.form-control(type='text', placeholder='City' name='city')
         div.form-group
           label(for='state') State:
@@ -40,6 +40,13 @@ block content
         div.form-group
           label(for='pw2') Confirm Password:
           input#pw2.form-control(type='password' name='confirmPassword')
+        label I identify as:
+        - const choices = ['LBGTQ+', 'Military Veteran', 'Disabled', 'Female']
+        ul.tags 
+          each choice in choices
+            .tag.tag__choice
+              input(type="checkbox" id=choice value=choice name="tags")
+              label(for=choice)= choice
         button.btn.btn-primary#button Sign up
 
 block scripts

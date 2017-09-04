@@ -5,6 +5,7 @@ let express = require('express');
 let router = express.Router();
 // et User = require('../models/user');
 
+
 // All the GETs
 // register route
 router.get('/register', function(req,res,next){
@@ -25,7 +26,6 @@ router.get('/', function(req, res, next){
 router.get('/contact', function(req, res, next){
 	return res.render('contact', {title: 'Home'});
 });
-
 
 
 

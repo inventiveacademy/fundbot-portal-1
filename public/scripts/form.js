@@ -8,5 +8,27 @@
 
 $('#button').click(function(e){
 	e.preventDefault();
-	alert('form submitted!')
+	let tags = [];
+
+	$.each($("input[name='tags']:checked"), function(){
+		tags.push($(this).val());
+	});
+	console.log(tags);
+	let data = {
+		"firstName": $('#firstName').val(),
+		"middleName": $('#middleName').val(),
+		"lastName" : $('#lastName').val(),
+		"contactPhone" : $('#contactPhone').val(),
+		"email" : $('#email').val(),
+		"address" : $('#address').val(),
+		"zip" : $('#zip').val(),
+		"city" : $('#city').val(),
+		"state" : $('#state').val(),
+		"tags" : tags
+	}
+
+	console.log(data);
+	$.post("http://localhost:3001/test", data, function(newData) {
+        console.log(newData);
+    });
 })
