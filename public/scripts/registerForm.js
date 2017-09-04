@@ -28,13 +28,12 @@ $('#button').click(function(e){
 		"password" : $('#pw').val(),
 		"tags" : tags
 	}
-
+// new data
 	console.log(data);
-	$.post("http://localhost:3001/", data, function(req, res, next) {
-	
-	if(res === 'success'){
+	$.post("http://localhost:3001/", data, function(newData) {
+		console.log(newData);
 		//use routes to do something here!
 		window.location = 'http://localhost:3002/';
-	}
-    });
+	
+    })
 })

@@ -5,6 +5,11 @@ let express = require('express');
 let router = express.Router();
 // let User = require('../models/user');
 
+// Session routes
+//GET /login
+router.get('/login', function(req,res,next){
+	return res.render('login', {title: 'Login'});
+})
 
 // All the GETs
 // register route

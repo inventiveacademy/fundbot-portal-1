@@ -12,6 +12,8 @@ let app = express();
 /*
 Use sessions for tracking logins
 */
+
+//TODO: 🔴 Add a real session store using mongo DB
 app.use(session({
 	secret: 'scottie loves you',
 	resave: true,
