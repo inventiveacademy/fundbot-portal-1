@@ -3,7 +3,7 @@ Require all the things
 */ 
 let express = require('express');
 let router = express.Router();
-// et User = require('../models/user');
+// let User = require('../models/user');
 
 
 // All the GETs

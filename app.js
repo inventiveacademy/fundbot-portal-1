@@ -6,12 +6,18 @@ Requiring all the things. Leggo!
 let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+let session = require('express-session');
 let app = express();
 
 /*
-Parse incoming requests
-
+Use sessions for tracking logins
 */
+app.use(session({
+	secret: 'scottie loves you',
+	resave: true,
+	saveUninitialized: false
+}));
+
 //parse incoming requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false }));

@@ -30,8 +30,11 @@ $('#button').click(function(e){
 	}
 
 	console.log(data);
-	$.post("http://localhost:3001/", data, function(newData, status) {
-	//🐵 this part isn't working
-	alert(newData, status);
+	$.post("http://localhost:3001/", data, function(req, res, next) {
+	
+	if(res === 'success'){
+		//use routes to do something here!
+		window.location = 'http://localhost:3002/';
+	}
     });
 })
