@@ -13,6 +13,7 @@ $('#button').click(function(e){
 	$.each($("input[name='tags']:checked"), function(){
 		tags.push($(this).val());
 	});
+
 	console.log(tags);
 	let data = {
 		"firstName": $('#firstName').val(),
@@ -24,11 +25,13 @@ $('#button').click(function(e){
 		"zip" : $('#zip').val(),
 		"city" : $('#city').val(),
 		"state" : $('#state').val(),
+		"password" : $('#pw').val(),
 		"tags" : tags
 	}
 
 	console.log(data);
-	$.post("http://localhost:3001/test", data, function(newData) {
-        console.log(newData);
+	$.post("http://localhost:3001/", data, function(newData, status) {
+	//🐵 this part isn't working
+	alert(newData, status);
     });
 })
